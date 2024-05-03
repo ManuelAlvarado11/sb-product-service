@@ -69,8 +69,8 @@ public class ProductServiceImpl implements ProductService {
 
         if(productDB == null) return  null;
 
-        productDB.setStock(quantify);
-
+        Double stock = productDB.getStock() + quantify;
+        productDB.setStock(stock);
         return productRepository.save(productDB);
     }
 }
